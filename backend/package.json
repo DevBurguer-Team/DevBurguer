@@ -1,0 +1,20 @@
+{
+  "name": "devburger-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --apply ."
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

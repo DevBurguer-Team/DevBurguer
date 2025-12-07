@@ -1,0 +1,18 @@
+{
+  "name": "devburger-interface",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "biome lint .",
+    "preview": "vite preview",
+    "format": "biome format --write .",
+    "check": "biome check --apply ."
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
