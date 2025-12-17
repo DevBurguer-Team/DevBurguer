@@ -1,3 +1,6 @@
+Projeto Dev Burguer Team.
+
+Olá, eu sou o Gabriel e consegui fazer meu primeiro push.
 Projeto Dev Burguer Team 
 
 Olá, eu sou a Aksa e consegui fazer meu  1º push
