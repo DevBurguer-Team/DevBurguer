@@ -1,7 +1,7 @@
 {
-  "name": "devburger-api",
+  "name": "devburguer-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto de uma sanduicheria virtual desenvolvido de forma colaborativa em equipe.",
   "main": "server.js",
   "scripts": {
     "dev": "node --watch src/server.js",
@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-  },
-  "devDependencies": {
+    "express": "^5.2.1"
   }
 }
