@@ -12,3 +12,5 @@ Olá, eu sou o Samuel e consegui fazer meu primeiro push
 
 
 Alteração durante o encontro do dia 17/12/2025
+
+Comentário do Samuel
