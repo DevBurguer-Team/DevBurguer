@@ -11,8 +11,8 @@
     "format": "biome format --write .",
     "check": "biome check --apply ."
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@biomejs/biome": "^2.3.10"
   }
 }
