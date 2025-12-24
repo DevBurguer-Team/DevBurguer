@@ -30,14 +30,14 @@ class SessionController {
           } 
         });
 
-    if (existingUser) {
+    if (!existingUser) {
       emailOrPasswordIsIncorrect();
     }
 
     const isPasswordCorrect = await bcrypt.compare(password,existingUser.password_hash,
   );
 
-  if (isPasswordCorrect) {
+  if (!isPasswordCorrect) {
        emailOrPasswordIsIncorrect();
     }
 
