@@ -20,6 +20,6 @@ export const standardTheme = {
   poppinsFont: '"Poppins", sans-serif',
 };
 
-//                   ${(props) => props.theme.cor};
+//                   ${(props) => props.theme.cor}; O
 
 //                   ${props.theme.cor}
