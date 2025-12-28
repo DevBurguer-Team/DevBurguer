@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
+import Product from '../app/models/Product.js';
 import User from '../app/models/User.js';
 import configDatabase from '../config/database.cjs';
-import Product from '../app/models/Product.js';
 
 const models = [User, Product];
 

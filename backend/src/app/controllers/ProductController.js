@@ -21,7 +21,7 @@ class ProductController {
       name,
       price,
       category,
-      path: filename
+      path: filename,
     });
 
     return response.status(201).json({ newproduct });
