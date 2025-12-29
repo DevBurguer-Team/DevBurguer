@@ -2,7 +2,8 @@ import * as Yup from 'yup';
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 import authConfig from './../../config/auth.js'
-class SessionController {
+
+class SessionController 
    async store(request, response) {
     const schema = Yup.object({
       email: Yup.string().email().required(),
@@ -12,16 +13,20 @@ class SessionController {
      const isValid = await schema.isValid(request.body, { 
       abortEarly: false,
       strict: true 
-    });
+    })
 
       const emailOrPasswordIsIncorrect = () => { 
      return response
      .status(400)
      .json({ error: 'Email or password incorrect.' });
+
+    const emailOrPasswordIsIncorrect = () => {
+    return response.status(400).json({ error: 'Email or password incorrect.' });
+
     };
 
      if (!isValid){
-      emailOrPasswordIsIncorrect();
+    return  emailOrPasswordIsIncorrect();
      }
 
        const { email, password } = request.body;
@@ -33,7 +38,7 @@ class SessionController {
         });
 
     if (!existingUser) {
-      emailOrPasswordIsIncorrect();
+    return  emailOrPasswordIsIncorrect();
     }
 
     const isPasswordCorrect = await bcrypt.compare(
@@ -42,7 +47,7 @@ class SessionController {
   );
 
   if (!isPasswordCorrect) {
-       emailOrPasswordIsIncorrect();
+     return  emailOrPasswordIsIncorrect();
     }
         
      const token = jwt.sign({ id:  existingUser.id}, authConfig.secret, {
