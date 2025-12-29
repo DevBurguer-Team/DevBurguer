@@ -58,5 +58,7 @@ Thumbs.db
 *.njsproj
 *.sln
 
+#Upload de imagens
+uploads
 
 
