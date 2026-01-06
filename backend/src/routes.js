@@ -18,14 +18,16 @@ routes.use(authMiddleware)
 routes.post('/products', adminMiddleware, upload.single('file'), ProductController.store);
 routes.post('/products', upload.single('file'), ProductController.store);
 routes.put(
-  '/products/:id', 
-  authMiddleware, 
-  upload.single('file'), 
+  '/products/:id',
+  authMiddleware,
+  upload.single('file'),
   ProductController.update
 );
 routes.get('/products', ProductController.index);
 
-
+// categories 
+routes.post('/categories', ProductController.store)
+routes.get('/categories', ProductController.index)
 
 
 
