@@ -12,24 +12,24 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
         unique: true,
       },
-      createdAt: {
-        type: Sequelize.DATE(),
-        allowNull: false,
-
+      path: {
+        type: Sequelize.STRING,
       },
-      updatedAt: {
-        type: Sequelize.DATE(),
+      created_at: {
+        type: Sequelize.DATE,
         allowNull: false,
-
-      }
-
-    })
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+    });
   },
 
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('categories');
-  }
+  },
 };

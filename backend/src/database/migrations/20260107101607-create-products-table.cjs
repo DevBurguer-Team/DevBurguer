@@ -12,26 +12,27 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       price: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
       path: {
-        type: Sequelize.STRING(),
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      category: {
-        type: Sequelize.STRING(),
+      offer: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
         allowNull: false,
       },
       created_at: {
-        type: Sequelize.DATE(),
+        type: Sequelize.DATE,
         allowNull: false,
       },
       updated_at: {
-        type: Sequelize.DATE(),
+        type: Sequelize.DATE,
         allowNull: false,
       },
     });
