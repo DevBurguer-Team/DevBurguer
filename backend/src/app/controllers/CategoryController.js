@@ -90,7 +90,7 @@ class CategoryController {
                 id,
             },
         })
-        return response.status(201).json({ newCategory });
+        return response.status(201).json();
 
     }
 

@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', 'email', {
+    await queryInterface.createTable('users', {
       id: {
         primaryKey: true,
         allowNull: false,
@@ -25,7 +25,7 @@ module.exports = {
       },
       admin: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false,
+        default: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -42,6 +42,3 @@ module.exports = {
     await queryInterface.dropTable('users');
   },
 };
-
-//UP -> SUBIR, CONFIGURAR
-// DOWN -> PARA BAIXO, DESFAZER, DERRUBAR
