@@ -46,23 +46,32 @@ export function Register() {
   console.log(errors);
 
   const onSubmit = async (data) => {
-   const response = await toast.promise(
-      api.post('/users',{
+    try { const { status } = await
+      api.post ('/users', {
       name: data.name,
       email: data.email,
       password: data.password,
-     }),
-       {
-      pending: 'Verificando seus dados!',
-      success: 'Cadastro efetuado com Sucesso',
-      error: 'Ops, algo deu errado! Tente novamente.',
-    }
-   );
-   
-    console.log(response)
-  }
+    },
+    {
+      validateStatus: () => true,
+    },
+  );
 
-  return (
+  if (status === 200 || status === 201) {
+    toast.success('Conta criada com sucesso!');
+  } else if ( status === 400) {
+    toast.error('Email já cadastrado! Faça seu o login para continuar');
+  } else {
+    throw new Error();
+  }
+  
+    } catch (error) {
+      toast.error('😭 Falha no Sistema! Tente novamente');
+    }
+     
+  };
+
+ return (
     <Container>
       <LeftContainer>
         <img src={Logo} alt="logo-devburguer" />
@@ -95,7 +104,7 @@ export function Register() {
              <p>{errors?.confirmPassword?.message}</p>
           </InputContainer>
 
-          <Button type="submit">Criar Conta</Button>
+          <Button type="submit">Criar Conta</Button >
         </Form>
        <p>
         Já possui conta ?Clique aqui.
@@ -105,5 +114,7 @@ export function Register() {
       
     </Container>
   );
-}
+ }
+
+
 
