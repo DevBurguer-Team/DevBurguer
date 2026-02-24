@@ -1,18 +1,19 @@
 import { CategoriesCarousel } from "../../components/CategoriesCarousel";
-import { Banner,  Container } from "./styles";
+import { OffersCarousel } from "../../components/OffersCarousel";
+import { Banner, Container } from "./styles";
 
 export function Home() {
   return (
     <main>
       <Banner>
-      <h1>Seja Bem Vindo!</h1>
+        <h1>Seja Bem Vindo!</h1>
       </Banner>
-     <Container>
-      
-         <CategoriesCarousel />
-         <div>Carrosel Produtos</div>
-       
-     </Container>
+      <Container>
+        <div>
+          <CategoriesCarousel />
+          <OffersCarousel />
+        </div>
+      </Container>
     </main>
   );
-}
+} 

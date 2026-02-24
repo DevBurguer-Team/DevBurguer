@@ -29,5 +29,7 @@ export const Container = styled.div`
 `;
 
 
-
+// export const Content = styled.div`
+//     background-color: #f4f4f4;
+// `
 
