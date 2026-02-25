@@ -15,9 +15,7 @@ padding: 20px;
 border-radius: 10px;
 background: #fff;
 box-shadow: 0px 0px 5px 15px rgba(82, 26, 26, 0.25);
-.react-multi-carousel-list{
-overflow: visible;
-}
+position: relative;
 div{
     width: 100%;
     height: 80px;
