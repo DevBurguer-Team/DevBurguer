@@ -26,6 +26,7 @@ background-color:#1f1f1f;
 background-position:center;
 background-size:cover;
 position: relative;
+z-index: 0;
 
 
 h1{
@@ -54,7 +55,7 @@ gap: 50px;
 margin-top: 30px;
 `
 
-export const categoryButton = styled(Link)`
+export const CategoryButton = styled(Link)`
 text-decoration: none;
 cursor: pointer;
 color: ${props => props.$isActiveCategory ? '#9858a6' : '#9758ad'};
@@ -64,7 +65,7 @@ padding-bottom: 5px;
 line-height: 20px;
 background: none;
 border: none;
-border-bottom: ${(props) => props.$isActiveCategory && '3px solid #9758ad'};
+border-bottom: ${(props) => (props.$isActiveCategory ? '3px solid #9758ad' : 'none')};
 
 `
 export const ProductsContainer = styled.div`

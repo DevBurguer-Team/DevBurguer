@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
 
@@ -10,6 +10,8 @@ import {
     CategoryButton
 } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { CardProduct } from "../../components/CardProduct";
+
 export function Menu() {
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
@@ -54,9 +56,11 @@ export function Menu() {
             <Banner>
                 <h1> O MELHOR <br />
                     HAMBURGUER<br />
-                    ESTÁ AQUI </h1>
-                <span>Esse cardápio está irresistivel</span>
+                    ESTÁ AQUI
+                    <span>Esse cardápio está irresistivel</span>
+                </h1>
             </Banner>
+
             <CategoryMenu>
                 {categories.map((category) => (
 
@@ -82,20 +86,9 @@ export function Menu() {
                 ))}
             </CategoryMenu>
 
-            {CategoryMenu.map((category) => (
-
-                <categoryButton
-                    key={category.id}
-                    onClick={() => {
-                        navigate(`/products/${category.id}`)
-                    }}
-                >
-                    {category.name}
-                </categoryButton>
-            ))}
             <ProductsContainer>
                 {filteredProducts.map((product) => (
-                    <CardProduct key={product} product={product.id} />
+                    <CardProduct key={product.id} product={product} />
                 ))}
             </ProductsContainer>
         </Container>
