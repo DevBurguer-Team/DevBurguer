@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
-
+import useUser from '../../hooks/UserContext';
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api';
@@ -19,17 +19,18 @@ import {
 } from './styles';
 
 export function Login() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  const { putUserData } = useUser()
   const schema = yup
     .object({
       email: yup
-      .string()
-      .email('Digite um e-mail válido')
-      .required('O e-mail é obrigatório'),
+        .string()
+        .email('Digite um e-mail válido')
+        .required('O e-mail é obrigatório'),
       password: yup
-      .string()
-      .min(6, 'A senha deve ter até 6 caracteres')
-      .required('Digite uma senha'),
+        .string()
+        .min(6, 'A senha deve ter até 6 caracteres')
+        .required('Digite uma senha'),
     })
     .required();
 
@@ -44,33 +45,33 @@ export function Login() {
   console.log(errors);
 
   const onSubmit = async (data) => {
-   const {
-      data: { token },
-   } = await toast.promise(
-      api.post('/sessions',{
-      email: data.email,
-      password: data.password,
-     }),
-       {
-      pending: 'Verificando seus dados',
-      success: {
-        render() {
-          setTimeout(() => {
-            navigate('/');
-          }, 2000);
-          return 'seja Bem-vindo(a) 👌'
+    const {
+      data: { data: userData },
+    } = await toast.promise(
+      api.post('/sessions', {
+        email: data.email,
+        password: data.password,
+      }),
+      {
+        pending: 'Verificando seus dados',
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
+            return 'seja Bem-vindo(a) 👌'
+          },
         },
+        error: 'Email ou senha Incorretos 🤯',
       },
-      error: 'Email ou senha Incorretos 🤯',
-    },
-   );
-   
-    localStorage.setItem('token', token);
+    );
+    putUserData({ userData })
+    // localStorage.setItem('token', token);
   }
 
   return (
     <Container>
-      <LeftContainer>
+      <LeftContainer >
         <img src={Logo} alt="logo-devburguer" />
       </LeftContainer>
       <RightContainer>
@@ -96,7 +97,7 @@ export function Login() {
           Não possui conta? <Link to="/cadastro">Clique aqui.</Link>
         </p>
       </RightContainer>
-      
+
     </Container>
   );
 }
