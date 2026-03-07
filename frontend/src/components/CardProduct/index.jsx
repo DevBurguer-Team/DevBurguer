@@ -1,25 +1,24 @@
 import PropTypes from 'prop-types';
-import { Container, CardImage } from './styles';
+
+import { useCart } from '../../hooks/CartContext';
+import { CartButton } from '../CartButton';
+import { CardImage, Container } from './styles';
 
 export function CardProduct({ product }) {
-    console.log(product)
-    return (
-        <Container  >
-            <CardImage src={product.url} alt={product.name}>
-                <div>
-                    <p>{product.name}</p>
-                    <p>{product.price}</p>
-                </div>
+  const { putProductInCart } = useCart();
 
-            </CardImage>
-        </Container >
-    );
+  return (
+    <Container>
+      <CardImage src={product.url} alt={product.name} />
+      <div>
+        <p>{product.name}</p>
+        <strong>{product.currencyValue}</strong>
+      </div>
+      <CartButton onClick={() => putProductInCart(product)}></CartButton>
+    </Container>
+  );
 }
+
 CardProduct.propTypes = {
-    product: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        image: PropTypes.string.isRequired,
-    }).isRequired,
-}; 
+  product: PropTypes.object,
+};

@@ -1,26 +1,22 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
-   .carousel-item {
-    padding-right: 40px;
-   }
-    padding-left: 40px;
-    overflow-x :hidden;
-    
-    .react-multi-carousel-list{
-        overflow: visible;
-    }
+.carousel-item {
+    padding-right: 40px;    
+}
 
-    .react-multiple-carousel_arrow--left{
-        left: 15px;
-        top: 10px; 
-    }
-    .react-multiple-carousel_arrow--right{
-        right: 15px;
-        top: 10px; 
-    }
+.react-multiple-carousel__arrow--left {
+    left: 15px;
+    top: 10px;
+}
+
+.react-multiple-carousel__arrow--right {
+    top: 10px;
+}
+
+padding-left: 30px;
+cursor: grab;
 `;
 
 export const Title = styled.h2`
@@ -44,33 +40,34 @@ margin-bottom: 40px;
 `;
 
 export const ContainerItems = styled.div`
-    background: url('${(props) => props.imageUrl}');
-    background-position: center;
-    background-size: cover;
+background: url('${(props) => props.imageUrl}');
+background-position: center;
+background-size: cover;
 
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-    width: 100%;
-    height: 250px;
-    border-radius: 20px;
+display: flex;
+align-items: center;
+padding: 20px 10px;
+width: 100%;
+height: 250px;
+border-radius: 20px;
 
-  
+p {
+    
+}
 `;
 
 export const CategoryButton = styled(Link)`
-  color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
+ color: #fff;
+    background-color: rgba(0,0,0,0.5);
     padding: 10px 30px;
     border-radius: 30px;
     font-size: 22.5px;
-    font-weight: 500;
+    font-weight: bold;
     margin-top: 50px;
+    font-weight: 500;
     text-decoration: none;
-    cursor: pointer;
 
     &:hover {
-        opacity: 0.8;
         background-color: #9858a6;
     }
-`
+`;

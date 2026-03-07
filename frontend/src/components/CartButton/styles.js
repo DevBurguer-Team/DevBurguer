@@ -1,20 +1,15 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
 
 export const ContainerButton = styled.button`
-background: #9758a6;
-width: 100% ;
+background-color: #9758a6;
+width: 100%;
 height: 52px;
-border:0 ; 
-border-radius: 20px;
-font-size:30px;
-color: #ffffff;
-cursor: pointer;
+border: 0;
+border-radius: 5px;
+font-size: 30px;
+color: #fff;
 
-&:hover{
-background-color: #6f357c;
-
+&:hover {
+    background-color: #6f357c;
 }
-
-
-`
+`;

@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
-import Product from '../models/Product.js';
 import Category from '../models/Category.js';
+import Product from '../models/Product.js';
 
 class ProductController {
   async store(request, response) {
@@ -17,17 +17,18 @@ class ProductController {
       return response.status(400).json({ error: err.errors });
     }
 
-    const { name, price, category_id, offer } = request.body;
     const { filename } = request.file;
+    const { name, price, category_id, offer } = request.body;
 
-    const newproduct = await Product.create({
+    const newProduct = await Product.create({
       name,
       price,
       category_id,
       path: filename,
       offer,
     });
-    return response.status(201).json(newproduct);
+
+    return response.status(201).json(newProduct);
   }
 
   async update(request, response) {
@@ -44,14 +45,13 @@ class ProductController {
       return response.status(400).json({ error: err.errors });
     }
 
-    const { name, price, category_id, offer } = request.body;
-    const { id } = request.params;
-
     let path;
     if (request.file) {
       const { filename } = request.file;
       path = filename;
     }
+    const { name, price, category_id, offer } = request.body;
+    const { id } = request.params;
 
     await Product.update(
       {
@@ -68,19 +68,21 @@ class ProductController {
       },
     );
 
-    return response.status(200).json();
+    return response.status(201).json();
   }
 
   async index(_request, response) {
     const products = await Product.findAll({
-      include: {
-        model: Category,
-        as: 'category',
-        attributes: ['id', 'name'],
-      },
+      include: [
+        {
+          model: Category,
+          as: 'category',
+          attributes: ['id', 'name'],
+        },
+      ],
     });
 
-    return response.status(200).json(products);
+    return response.json(products);
   }
 }
 

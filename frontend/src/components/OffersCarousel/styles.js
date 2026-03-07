@@ -1,26 +1,26 @@
-
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
-   .carousel-item {
-    padding-right: 40px;
-   }
-    padding-left: 40px;
-    overflow-x :hidden;
-    
-    .react-multi-carousel-list{
-        overflow: visible;
-    }
+.carousel-item {
+    padding-right: 40px;    
+}
+overflow-x: hidden;
 
-    .react-multiple-carousel_arrow--left{
-        left: 15px;
-        top: 10px; 
-    }
-    .react-multiple-carousel_arrow--right{
-        right: 15px;
-        top: 10px; 
-    }
+.react-multi-carousel-list {
+   overflow: visible;
+};
+
+.react-multiple-carousel__arrow--left {
+    left: 15px;
+    top: 10px;
+}
+
+.react-multiple-carousel__arrow--right {
+    top: 10px;
+}
+
+padding-left: 40px;
+padding-bottom: 40px;
 `;
 
 export const Title = styled.h2`
@@ -30,7 +30,7 @@ color: #61a120;
 padding-bottom: 12px;
 position: relative;
 text-align: center;
-margin-bottom: 40px;
+margin: 70px 0;
 
 &::after {
     content: '';

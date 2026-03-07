@@ -9,9 +9,6 @@ module.exports = {
         model: 'categories',
         key: 'id',
       },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-      allowNull: true,
     });
   },
 

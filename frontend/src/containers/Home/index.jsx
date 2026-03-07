@@ -1,21 +1,19 @@
-import { CategoriesCarousel } from "../../components/CategoriesCarousel";
-import { OffersCarousel } from "../../components/OffersCarousel";
-import useUser from "../../hooks/UserContext";
-import { Banner, Container } from "./styles";
+import { CategoriesCarousel, OffersCarousel } from '../../components';
+import { Banner, Container } from './styles';
 
 export function Home() {
-  console.log(useUser)
   return (
     <main>
       <Banner>
-        <h1>Seja Bem Vindo!</h1>
+        <h1>Bem-vindo!</h1>
       </Banner>
       <Container>
         <div>
           <CategoriesCarousel />
           <OffersCarousel />
+          <div>Carrossel Produtos</div>
         </div>
       </Container>
     </main>
   );
-} 
+}

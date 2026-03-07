@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
-import Category from '../models/Category.js';
-import Product from '../models/Product.js';
+import Category from '../models/Category.js'
+import Product from '../models/Product.js'
 import Order from '../schemas/Order.js';
 
 class OrderController {
@@ -17,9 +17,9 @@ class OrderController {
     });
 
     try {
-      schema.validateSync(request.body, { abortEarly: false, strict: true });
+      schema.validateSync(request.body, { abortEarly: false, strict: true })
     } catch (err) {
-      return response.status(400).json({ error: err.errors });
+      return response.status(400).json({ error: err.errors })
     }
 
     const { userId, userName } = request;

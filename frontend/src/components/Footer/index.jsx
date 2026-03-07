@@ -1,13 +1,9 @@
-import { Container } from './styles';
+import { Container } from "./styles";
 
 export function Footer() {
-    const yearDate = new Date().getFullYear();
-
-    return (
-        <Container>
-            <p>
-                Desenvolvido por DevClub - {yearDate} - Todos os direitos reservados{' '}
-            </p>
-        </Container>
-    );
+  return (
+    <Container>
+      <p>Desenvolvido por DevClub - 2025 - Todos os direitos reservados</p>
+    </Container>
+  );
 }

@@ -18,13 +18,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      path: {
+      category: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      offer: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
+      path: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_at: {
