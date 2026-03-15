@@ -2,7 +2,12 @@ import Stripe from 'stripe';
 import * as yup from 'yup';
 import 'dotenv/config';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripeKey = process.env.STRIPE_SECRET_KEY;
+if (!stripeKey) {
+  throw new Error("STRIPE_SECRET_KEY não definida. Verifique o arquivo .env");
+}
+
+const stripe = new Stripe(stripeKey);
 
 const calculateOrderAmount = (items) => {
   const total = items.reduce((acc, current) => {
