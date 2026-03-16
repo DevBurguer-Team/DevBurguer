@@ -1,4 +1,5 @@
 import { Elements } from '@stripe/react-stripe-js';
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -11,6 +12,10 @@ import GlobalStyle from './styles/globalStyles';
 import { standardTheme } from './styles/themes/standard.js';
 import { BrowserRouter } from 'react-router-dom';
 import { Router } from './routes/index.jsx';
+import { Router } from './routes';
+import GlobalStyle from './styles/globalStyles';
+import { standardTheme } from './styles/themes/standard.js';
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +24,7 @@ createRoot(document.getElementById('root')).render(
         <Elements stripe={stripePromise}>
           <BrowserRouter>
            <Router/>
+             <Router />
           </BrowserRouter>
         </Elements>
         <GlobalStyle />
