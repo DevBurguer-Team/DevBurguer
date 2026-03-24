@@ -2,21 +2,22 @@ import Select from 'react-select';
 import styled from 'styled-components';
 
 export const ProductImage = styled.img`
-    height:80px;
-    padding: 12px;
-    border-radius: 50%;
+  height:80px;
+  padding: 12px;
+  border-radius: 50%;
 `;
 
 export const SelectStatus = styled(Select)`
-    width: 240px;
-    margin: 0 auto;
+  width: 240px;
+  margin: 0 auto;
 `;
+
 export const Filter = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 28px 0;
-    gap: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 28px 0;
+  gap: 50px;
 `;
 
 export const FilterOption = styled.button`
